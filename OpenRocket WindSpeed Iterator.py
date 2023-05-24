@@ -20,7 +20,14 @@ from orhelper import FlightDataType, FlightEvent
 
 
 with orhelper.OpenRocketInstance() as instance:
-    wind_speed_range = np.array([0.0, 1.39, 2.78,5.56,8.33])
+
+    save_graphs = False
+    iterate_windSpeed = False
+    iterate_launchAngle = False
+    threeD_trajectory = False
+
+    wind_speed_range = np.array([0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0])*1000/3600 #array([km/hr]) to m/s
+    launch_an = 1
     orh = orhelper.Helper(instance)
 
     #load .ork files in the program directory
@@ -41,14 +48,18 @@ with orhelper.OpenRocketInstance() as instance:
     sim.getOptions().setLaunchLongitude(-81.9) #deg
     
     
-    def simulate_windSpeed(wind_speed, sim):
+    def simulate_windSpeed(wind_speed, ang, sim):
         sim.getOptions().setWindSpeedAverage(wind_speed) #m/s
+        sim.getOptions().setLaunchRodAngle(math.radians(ang))
         orh.run_simulation(sim)
         return orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_ALTITUDE, FlightDataType.TYPE_STABILITY])
 
     data_runs = dict() 
+
     for windSpd in wind_speed_range:
-       data_runs[windSpd] = simulate_windSpeed( windSpd, sim)
+       #if iterate_launchAngle is True:
+           
+       data_runs[windSpd] = simulate_windSpeed( windSpd, 6, sim)
 
     #data = orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_ALTITUDE, FlightDataType.TYPE_VELOCITY_TOTAL, FlightDataType.TYPE_STABILITY, FlightDataType.TYPE_MACH_NUMBER])
     #events = orh.get_events(sim)
@@ -62,13 +73,13 @@ with orhelper.OpenRocketInstance() as instance:
         FlightEvent.LAUNCHROD: 'Launch rod clearance'
     }
 
-    fig = plt.figure()
+    fig = plt.figure(figsize=(10,5))
     ax1 = fig.add_subplot(121)
     ax2 = fig.add_subplot(122)
 
     for spd, data in data_runs.items():
         ax1.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_ALTITUDE], label = spd)
-        ax2.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_STABILITY], label = spd)
+        ax2.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_STABILITY], label = str(round(spd*3600/1000, 0))+" km/h")
    
     ax1.set_xlabel('Time (s)')
     ax1.set_ylabel('AGL (m)', color='b')
@@ -79,10 +90,16 @@ with orhelper.OpenRocketInstance() as instance:
     ax2.set_ylabel('Stability', color='b')
     change_color = lambda ax, col: [x.set_color(col) for x in ax.get_yticklabels()]
     change_color(ax2, 'b')
+    ax2.legend()
 
 
     ax1.grid(True)
     ax2.grid(True)
 
+    #if save_graph is true:
+        #save file
+
 # Leave OpenRocketInstance context before showing plot in order to shutdown JVM first
+plt.savefig("test.png",dpi=600)
 plt.show()
+
