@@ -1,3 +1,4 @@
+#Author: Gordon So
 #This script is meant to automate certain process of OpenRocket simulation
 #Graphics will be generated with name "xxxx" (TBD) for reports
 #
@@ -52,7 +53,7 @@ with orhelper.OpenRocketInstance() as instance:
         sim.getOptions().setWindSpeedAverage(wind_speed) #m/s
         sim.getOptions().setLaunchRodAngle(math.radians(ang))
         orh.run_simulation(sim)
-        return orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_ALTITUDE, FlightDataType.TYPE_STABILITY])
+        return orh.get_timeseries(sim, [FlightDataType.TYPE_TIME, FlightDataType.TYPE_ALTITUDE, FlightDataType.TYPE_STABILITY, FlightDataType.TYPE_MACH_NUMBER])
 
     data_runs = dict() 
 
@@ -73,18 +74,21 @@ with orhelper.OpenRocketInstance() as instance:
         FlightEvent.LAUNCHROD: 'Launch rod clearance'
     }
 
-    fig = plt.figure(figsize=(10,5))
-    ax1 = fig.add_subplot(121)
-    ax2 = fig.add_subplot(122)
+    fig = plt.figure(figsize=(15,5))
+    ax1 = fig.add_subplot(131)
+    ax2 = fig.add_subplot(132)
+    ax3 = fig.add_subplot(133)
 
     for spd, data in data_runs.items():
-        ax1.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_ALTITUDE], label = spd)
+        ax1.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_ALTITUDE], label = str(round(spd*3600/1000, 0))+" km/h")
         ax2.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_STABILITY], label = str(round(spd*3600/1000, 0))+" km/h")
+        ax3.plot(data[FlightDataType.TYPE_TIME],data[FlightDataType.TYPE_MACH_NUMBER], label = str(round(spd*3600/1000, 0))+" km/h")
    
     ax1.set_xlabel('Time (s)')
     ax1.set_ylabel('AGL (m)', color='b')
     change_color = lambda ax, col: [x.set_color(col) for x in ax.get_yticklabels()]
     change_color(ax1, 'b')
+    ax1.legend()
 
     ax2.set_xlabel('Time (s)')
     ax2.set_ylabel('Stability', color='b')
@@ -92,9 +96,15 @@ with orhelper.OpenRocketInstance() as instance:
     change_color(ax2, 'b')
     ax2.legend()
 
+    ax3.set_xlabel('Time (s)')
+    ax3.set_ylabel('MACH', color='b')
+    change_color = lambda ax, col: [x.set_color(col) for x in ax.get_yticklabels()]
+    change_color(ax2, 'b')
+    ax3.legend()
 
     ax1.grid(True)
     ax2.grid(True)
+    ax3.grid(True)
 
     #if save_graph is true:
         #save file
