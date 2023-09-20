@@ -42,6 +42,7 @@ with orhelper.OpenRocketInstance() as instance:
     sim.getOptions().setTimeStep(0.05) #seconds
     sim.getOptions().setLaunchRodLength(5.18) #meters
     sim.getOptions().setLaunchRodAngle(math.radians(6)) #rad
+    sim.getOptions().setLaunchRodDirection(math.radians(270))
     sim.getOptions().setWindSpeedDeviation(0)
     sim.getOptions().setWindDirection(math.radians(90))
     sim.getOptions().setLaunchAltitude(370) #meters
