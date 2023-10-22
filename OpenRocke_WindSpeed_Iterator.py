@@ -28,12 +28,13 @@ with orhelper.OpenRocketInstance() as instance:
     threeD_trajectory = False
 
     wind_speed_range = np.array([0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0])*1000/3600 #array([km/hr]) to m/s
+    launchLocation = [48,-81.9]
     launch_an = 1
     orh = orhelper.Helper(instance)
 
     #load .ork files in the program directory
 
-    doc = orh.load_doc(os.path.join('Xenia-2_test.ork'))
+    doc = orh.load_doc(os.path.join('Rocket.ork'))
     sim = doc.getSimulation(0)
 
     #setup sim settings
@@ -46,8 +47,8 @@ with orhelper.OpenRocketInstance() as instance:
     sim.getOptions().setWindSpeedDeviation(0)
     sim.getOptions().setWindDirection(math.radians(90))
     sim.getOptions().setLaunchAltitude(370) #meters
-    sim.getOptions().setLaunchLatitude(48) #deg
-    sim.getOptions().setLaunchLongitude(-81.9) #deg
+    sim.getOptions().setLaunchLatitude(launchLocation[0]) #deg
+    sim.getOptions().setLaunchLongitude(launchLocation[1]) #deg
     
     
     def simulate_windSpeed(wind_speed, ang, sim):
@@ -87,6 +88,7 @@ with orhelper.OpenRocketInstance() as instance:
    
     ax1.set_xlabel('Time (s)')
     ax1.set_ylabel('AGL (m)', color='b')
+    ax1.title.set_text("Altitude vs Time")
     change_color = lambda ax, col: [x.set_color(col) for x in ax.get_yticklabels()]
     change_color(ax1, 'b')
     ax1.legend()
