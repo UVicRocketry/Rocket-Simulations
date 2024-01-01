@@ -4,7 +4,7 @@ import os
 
 absolute_path = os.path.dirname(__file__)
 
-#TODO: Add a sim summary report generator and store graph/document
+#TODO: Add a sim summary report generator and store graph/document (DO IT IN JPY Notebook)
 
 #define sim enviroment
 
@@ -54,7 +54,7 @@ anduril1.add_motor(Pro75M1670, position=-1.255) #check funtion for defintion of 
 #Can add rail buttons if needed
 
 #adding aero surfaces
-nose_cone = anduril1.add_nose(
+nose_cone = anduril1.add_nose( # will need to change the rocketpy.rocket.aero_surface module to add custom geometry
     length=0.55829, kind="von karman", position=1.278 #TODO: seems like limited nosecone profile, check how to do custom one
 )
 
