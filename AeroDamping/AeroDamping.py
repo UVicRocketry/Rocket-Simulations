@@ -1,25 +1,29 @@
 import numpy as np
+from scipy.interpolate import interpn
 
 class AeroProperties: 
     #this is a class to store aero preperties, this should be changed to something more object based in the future
 
-    def __init__(self, name):
+    def __init__(self, name, MACH_1Darray, AOA_1Darray, x_cp_2Darray):
         self.name = name #component name
-        self.MACH = np.empty(0) #1D array to store MACH numbers
-        self.AOA = np.empty(0) #1D arrry to store angle of attack 
-        self.x_cp = np.empty(0) #table to store location of cetner of pressure in meters
-        self.C_n_a = np.empty(0) #table to store location of coefficient of normal force
+        self.MACH = MACH_1Darray #1D array to store MACH numbers
+        self.AOA = AOA_1Darray #1D arrry to store angle of attack 
+        self.x_cp = x_cp_2Darray #table to store location of cetner of pressure in meters
+        #self.C_n_a = C_n_a_2Darray #table to store location of coefficient of normal force
+    
+    def interpn_CP(self, MACHNum, AOANum):
+        return interpn((self.MACH, self.AOA),self.x_cp, [MACHNum, AOANum])
+
+global_MACH = np.array([0.804, 0.906, 1.035, 1.107, 1.23, 1.302, 1.404, 1.506, 1.605, 1.716, 1.818, 1.911, 2.022, 2.124, 2.214])
+global_AOA = np.array([0,1,2,3,4,5,6,7])
+
+
+Nosecone = AeroProperties("nosecone", global_MACH, global_AOA, np.array([[11.49453254,11.49453254,11.49453254,11.49453254,11.49453254,11.49453254,11.49453254,11.49453254],[11.8320252,11.8320257,11.83202628,11.83202693,11.83202766,11.83202846,11.83202933,11.83203027],[12.32532986,12.33015019,12.33566899,12.34188625,12.34880199,12.3564162,12.36472888,12.37374003],[12.5402832,12.5557792,12.57352057,12.59350733,12.61573948,12.64021701,12.66693992,12.69590822],[12.58907383,12.6409287,12.70029738,12.76717988,12.8415762,12.92348633,13.01291029,13.10984806],[12.3700097,12.44618513,12.53339845,12.63164967,12.74093877,12.86126576,12.99263065,13.13503342],[11.64765804,11.75930245,11.88712425,12.03112343,12.19129998,12.36765392,12.56018523,12.76889393],[10.5100602,10.63605838,10.78004409,10.94201731,11.12197804,11.31992629,11.53586206,11.76978535],[9.424269449,9.529680752,9.645781868,9.7725728,9.910053546,10.05822411,10.21708448,10.38663467],[8.489340127,8.581954113,8.681602953,8.788286645,8.902005189,9.022758586,9.150546836,9.285369938],[7.796255103,7.881569831,7.972216738,8.068195826,8.169507092,8.276150539,8.388126165,8.505433971],[7.265335663,7.346124352,7.431378494,7.521098089,7.615283137,7.713933638,7.817049592,7.924630998],[6.733981527,6.81108979,6.892113526,6.977052737,7.065907421,7.158677579,7.255363211,7.355964316],[6.314994245,6.389678443,6.46801159,6.549993685,6.635624729,6.724904721,6.817833661,6.91441155],[5.988884244,6.061942064,6.138528918,6.218644806,6.302289728,6.389463684,6.480166674,6.574398698]]))
+print(Nosecone.interpn_CP(0.805, 1.2))
 
 
 
-nosecone = AeroProperties("nosecone")
 
 
-print(nosecone.name)
-print(nosecone.MACH)
 
-nosecone.MACH = np.array([[0.1,0.2],[0.5,0.6]])
-print(nosecone.MACH)
 
-nosecone.MACH = np.vstack([nosecone.MACH,[2,2,2,2]])
-print(nosecone.MACH)
