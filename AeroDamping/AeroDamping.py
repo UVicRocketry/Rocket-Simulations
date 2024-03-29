@@ -5,13 +5,15 @@ class AeroProperties:
     #this is a class to store aero preperties, this should be changed to something more object based in the future
 
     def __init__(self, name, MACH_1Darray, AOA_1Darray, x_cp_2Darray):
+        
         self.name = name #component name
         self.MACH = MACH_1Darray #1D array to store MACH numbers
         self.AOA = AOA_1Darray #1D arrry to store angle of attack 
         self.x_cp = x_cp_2Darray #table to store location of cetner of pressure in meters
         #self.C_n_a = C_n_a_2Darray #table to store location of coefficient of normal force
     
-    def interpn_CP(self, MACHNum, AOANum):
+    def interpn_CP(self, MACHNum, AOANum): 
+        """Function that interpolate the center of pressure, take input of mach number and aoa of attach. Must between the mach value and aoa"""
         return interpn((self.MACH, self.AOA),self.x_cp, [MACHNum, AOANum])
 
 global_MACH = np.array([0.804, 0.906, 1.035, 1.107, 1.23, 1.302, 1.404, 1.506, 1.605, 1.716, 1.818, 1.911, 2.022, 2.124, 2.214])
