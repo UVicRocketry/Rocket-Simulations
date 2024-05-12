@@ -27,15 +27,15 @@
       <Overhang>0</Overhang>
       <Fin>
         <Count>4</Count>
-        <Chord>14</Chord>
+        <Chord>11.5</Chord>
         <Span>5</Span>
-        <SweepDistance>10.5</SweepDistance>
-        <TipChord>3.5</TipChord>
-        <Thickness>0.6</Thickness>
+        <SweepDistance>8.5</SweepDistance>
+        <TipChord>3</TipChord>
+        <Thickness>0.5333</Thickness>
         <LERadius>0</LERadius>
-        <Location>14.25</Location>
+        <Location>11.5</Location>
         <AirfoilSection>Double Wedge</AirfoilSection>
-        <FX1>4.375</FX1>
+        <FX1>2</FX1>
         <FX3>0.5278</FX3>
       </Fin>
     </BodyTube>
@@ -100,9 +100,9 @@
       <Booster2NozzleDiameter>0</Booster2NozzleDiameter>
       <IncludeBooster2>False</IncludeBooster2>
       <FlightTime>0</FlightTime>
-      <TimetoApogee>41.19909</TimetoApogee>
-      <MaxAltitude>34089.2</MaxAltitude>
-      <MaxVelocity>2309.159</MaxVelocity>
+      <TimetoApogee>39.33941</TimetoApogee>
+      <MaxAltitude>28672.25</MaxAltitude>
+      <MaxVelocity>1997.431</MaxVelocity>
       <OptimumWt>0</OptimumWt>
       <OptimumMaxAlt>0</OptimumMaxAlt>
     </Simulation>
