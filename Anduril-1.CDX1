@@ -3,8 +3,8 @@
   <RocketDesign>
     <NoseCone>
       <PartType>NoseCone</PartType>
-      <Length>28.675</Length>
-      <Diameter>5.735</Diameter>
+      <Length>22.6</Length>
+      <Diameter>5.769</Diameter>
       <Shape>Tangent Ogive</Shape>
       <BluntRadius>0.06</BluntRadius>
       <Location>0</Location>
@@ -12,39 +12,39 @@
     </NoseCone>
     <BodyTube>
       <PartType>BodyTube</PartType>
-      <Length>68.685</Length>
-      <Diameter>5.735</Diameter>
+      <Length>67.684</Length>
+      <Diameter>5.769</Diameter>
       <LaunchLugDiameter>0</LaunchLugDiameter>
       <LaunchLugLength>0</LaunchLugLength>
       <RailGuideDiameter>0</RailGuideDiameter>
       <RailGuideHeight>0</RailGuideHeight>
       <LaunchShoeArea>0</LaunchShoeArea>
-      <Location>28.675</Location>
+      <Location>22.6</Location>
       <Color>Black</Color>
-      <BoattailLength>1.552</BoattailLength>
-      <BoattailRearDiameter>5.218</BoattailRearDiameter>
+      <BoattailLength>1.5</BoattailLength>
+      <BoattailRearDiameter>5.25</BoattailRearDiameter>
       <BoattailOffset>0</BoattailOffset>
       <Overhang>0</Overhang>
       <Fin>
         <Count>4</Count>
-        <Chord>11.5</Chord>
+        <Chord>10.5</Chord>
         <Span>5</Span>
         <SweepDistance>8.5</SweepDistance>
-        <TipChord>3</TipChord>
-        <Thickness>0.5333</Thickness>
+        <TipChord>2</TipChord>
+        <Thickness>0.5614</Thickness>
         <LERadius>0</LERadius>
-        <Location>11.5</Location>
+        <Location>10.69</Location>
         <AirfoilSection>Double Wedge</AirfoilSection>
-        <FX1>2</FX1>
+        <FX1>1.5</FX1>
         <FX3>0.5278</FX3>
       </Fin>
     </BodyTube>
     <BoatTail>
       <PartType>BoatTail</PartType>
-      <Length>1.552</Length>
-      <Diameter>5.735</Diameter>
-      <RearDiameter>5.218</RearDiameter>
-      <Location>97.36</Location>
+      <Length>1.5</Length>
+      <Diameter>5.769</Diameter>
+      <RearDiameter>5.25</RearDiameter>
+      <Location>90.284</Location>
       <Color>Black</Color>
     </BoatTail>
     <Surface>Smooth (Zero Roughness)</Surface>
@@ -62,7 +62,7 @@
     <Altitude>1214</Altitude>
     <Pressure>28.89</Pressure>
     <RodAngle>6</RodAngle>
-    <RodLength>15</RodLength>
+    <RodLength>13</RodLength>
     <Temperature>74</Temperature>
     <WindSpeed>15.53</WindSpeed>
   </LaunchSite>
@@ -84,9 +84,9 @@
   <SimulationList>
     <Simulation>
       <SustainerEngine>N2540-GR-P  (CTI)</SustainerEngine>
-      <SustainerLaunchWt>61.4</SustainerLaunchWt>
+      <SustainerLaunchWt>59.36</SustainerLaunchWt>
       <SustainerNozzleDiameter>2.37</SustainerNozzleDiameter>
-      <SustainerCG>63.89</SustainerCG>
+      <SustainerCG>58.12</SustainerCG>
       <SustainerIgnitionDelay>0</SustainerIgnitionDelay>
       <Booster1LaunchWt>0</Booster1LaunchWt>
       <Booster1SeparationDelay>0</Booster1SeparationDelay>
@@ -100,9 +100,9 @@
       <Booster2NozzleDiameter>0</Booster2NozzleDiameter>
       <IncludeBooster2>False</IncludeBooster2>
       <FlightTime>0</FlightTime>
-      <TimetoApogee>39.33941</TimetoApogee>
-      <MaxAltitude>28672.25</MaxAltitude>
-      <MaxVelocity>1997.431</MaxVelocity>
+      <TimetoApogee>38.80949</TimetoApogee>
+      <MaxAltitude>28141.52</MaxAltitude>
+      <MaxVelocity>2024.064</MaxVelocity>
       <OptimumWt>0</OptimumWt>
       <OptimumMaxAlt>0</OptimumMaxAlt>
     </Simulation>
