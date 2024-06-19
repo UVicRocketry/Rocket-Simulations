@@ -27,15 +27,15 @@
       <Overhang>0</Overhang>
       <Fin>
         <Count>4</Count>
-        <Chord>11</Chord>
+        <Chord>10.5</Chord>
         <Span>5</Span>
         <SweepDistance>8.5</SweepDistance>
-        <TipChord>2.5</TipChord>
-        <Thickness>0.5523</Thickness>
+        <TipChord>2</TipChord>
+        <Thickness>0.5397</Thickness>
         <LERadius>0</LERadius>
         <Location>11.315</Location>
-        <AirfoilSection>Subsonic NACA</AirfoilSection>
-        <FX1>0</FX1>
+        <AirfoilSection>Double Wedge</AirfoilSection>
+        <FX1>3.125</FX1>
         <FX3>0</FX3>
       </Fin>
     </BodyTube>
@@ -100,9 +100,9 @@
       <Booster2NozzleDiameter>0</Booster2NozzleDiameter>
       <IncludeBooster2>False</IncludeBooster2>
       <FlightTime>0</FlightTime>
-      <TimetoApogee>38.26958</TimetoApogee>
-      <MaxAltitude>27618.51</MaxAltitude>
-      <MaxVelocity>2015.349</MaxVelocity>
+      <TimetoApogee>39.40939</TimetoApogee>
+      <MaxAltitude>29305.63</MaxAltitude>
+      <MaxVelocity>2074.214</MaxVelocity>
       <OptimumWt>0</OptimumWt>
       <OptimumMaxAlt>0</OptimumMaxAlt>
     </Simulation>
