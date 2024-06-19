@@ -59,12 +59,12 @@
     <Comments />
   </RocketDesign>
   <LaunchSite>
-    <Altitude>1213.911</Altitude>
-    <Pressure>28.6399</Pressure>
+    <Altitude>1214</Altitude>
+    <Pressure>28.64</Pressure>
     <RodAngle>6</RodAngle>
-    <RodLength>203.9366</RodLength>
+    <RodLength>203.94</RodLength>
     <Temperature>68</Temperature>
-    <WindSpeed>15.5343</WindSpeed>
+    <WindSpeed>15.53</WindSpeed>
   </LaunchSite>
   <Recovery>
     <Altitude1>656.168</Altitude1>
@@ -101,8 +101,8 @@
       <IncludeBooster2>False</IncludeBooster2>
       <FlightTime>0</FlightTime>
       <TimetoApogee>39.40939</TimetoApogee>
-      <MaxAltitude>29305.63</MaxAltitude>
-      <MaxVelocity>2074.214</MaxVelocity>
+      <MaxAltitude>29305.83</MaxAltitude>
+      <MaxVelocity>2074.216</MaxVelocity>
       <OptimumWt>0</OptimumWt>
       <OptimumMaxAlt>0</OptimumMaxAlt>
     </Simulation>
