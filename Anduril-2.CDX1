@@ -3,7 +3,7 @@
   <RocketDesign>
     <NoseCone>
       <PartType>NoseCone</PartType>
-      <Length>23</Length>
+      <Length>28.65</Length>
       <Diameter>5.73</Diameter>
       <Shape>Von Karman Ogive</Shape>
       <BluntRadius>0</BluntRadius>
@@ -12,44 +12,44 @@
     </NoseCone>
     <BodyTube>
       <PartType>BodyTube</PartType>
-      <Length>57.85</Length>
+      <Length>55.51</Length>
       <Diameter>5.73</Diameter>
-      <LaunchLugDiameter>0</LaunchLugDiameter>
-      <LaunchLugLength>0</LaunchLugLength>
+      <LaunchLugDiameter>0.5</LaunchLugDiameter>
+      <LaunchLugLength>1</LaunchLugLength>
       <RailGuideDiameter>0</RailGuideDiameter>
       <RailGuideHeight>0</RailGuideHeight>
       <LaunchShoeArea>0</LaunchShoeArea>
-      <Location>23</Location>
+      <Location>28.65</Location>
       <Color>Black</Color>
-      <BoattailLength>1.25</BoattailLength>
-      <BoattailRearDiameter>5.1</BoattailRearDiameter>
+      <BoattailLength>18</BoattailLength>
+      <BoattailRearDiameter>4.25</BoattailRearDiameter>
       <BoattailOffset>0</BoattailOffset>
-      <Overhang>0</Overhang>
+      <Overhang>18</Overhang>
       <Fin>
         <Count>4</Count>
-        <Chord>15</Chord>
-        <Span>6</Span>
-        <SweepDistance>10</SweepDistance>
-        <TipChord>5</TipChord>
+        <Chord>18</Chord>
+        <Span>5.75</Span>
+        <SweepDistance>12</SweepDistance>
+        <TipChord>6</TipChord>
         <Thickness>0.25</Thickness>
         <LERadius>0</LERadius>
-        <Location>15.25</Location>
+        <Location>0</Location>
         <AirfoilSection>Hexagonal</AirfoilSection>
-        <FX1>0.5</FX1>
-        <FX3>0.5</FX3>
+        <FX1>1</FX1>
+        <FX3>1</FX3>
       </Fin>
     </BodyTube>
     <BoatTail>
       <PartType>BoatTail</PartType>
-      <Length>1.25</Length>
+      <Length>18</Length>
       <Diameter>5.73</Diameter>
-      <RearDiameter>5.1</RearDiameter>
-      <Location>80.85</Location>
+      <RearDiameter>4.25</RearDiameter>
+      <Location>84.16</Location>
       <Color>Black</Color>
     </BoatTail>
-    <Surface>Smooth (Zero Roughness)</Surface>
+    <Surface>Smooth Paint</Surface>
     <CP>0</CP>
-    <ModifiedBarrowman>False</ModifiedBarrowman>
+    <ModifiedBarrowman>True</ModifiedBarrowman>
     <Turbulence>False</Turbulence>
     <SustainerNozzle>0</SustainerNozzle>
     <Booster1Nozzle>0</Booster1Nozzle>
@@ -60,33 +60,33 @@
   </RocketDesign>
   <LaunchSite>
     <Altitude>1214</Altitude>
-    <Pressure>28.64</Pressure>
+    <Pressure>30.18</Pressure>
     <RodAngle>6</RodAngle>
     <RodLength>15</RodLength>
-    <Temperature>68</Temperature>
-    <WindSpeed>15.53</WindSpeed>
+    <Temperature>59</Temperature>
+    <WindSpeed>9.32</WindSpeed>
   </LaunchSite>
   <Recovery>
     <Altitude1>1000</Altitude1>
-    <Altitude2>1000</Altitude2>
-    <DeviceType1>None</DeviceType1>
-    <DeviceType2>None</DeviceType2>
-    <Event1>False</Event1>
-    <Event2>False</Event2>
-    <Size1>1</Size1>
-    <Size2>1</Size2>
-    <EventType1>None</EventType1>
-    <EventType2>None</EventType2>
-    <CD1>1.33</CD1>
-    <CD2>1.33</CD2>
+    <Altitude2>1500</Altitude2>
+    <DeviceType1>Parachute</DeviceType1>
+    <DeviceType2>Parachute</DeviceType2>
+    <Event1>True</Event1>
+    <Event2>True</Event2>
+    <Size1>28.01</Size1>
+    <Size2>72</Size2>
+    <EventType1>Apogee</EventType1>
+    <EventType2>Altitude</EventType2>
+    <CD1>1.5</CD1>
+    <CD2>2.2</CD2>
   </Recovery>
   <MachAlt />
   <SimulationList>
     <Simulation>
       <SustainerEngine>O3400-IM-P  (CTI)</SustainerEngine>
-      <SustainerLaunchWt>58.2</SustainerLaunchWt>
-      <SustainerNozzleDiameter>3</SustainerNozzleDiameter>
-      <SustainerCG>54.45</SustainerCG>
+      <SustainerLaunchWt>66.33</SustainerLaunchWt>
+      <SustainerNozzleDiameter>2.7</SustainerNozzleDiameter>
+      <SustainerCG>64.37</SustainerCG>
       <SustainerIgnitionDelay>0</SustainerIgnitionDelay>
       <Booster1LaunchWt>0</Booster1LaunchWt>
       <Booster1SeparationDelay>0</Booster1SeparationDelay>
@@ -100,9 +100,9 @@
       <Booster2NozzleDiameter>0</Booster2NozzleDiameter>
       <IncludeBooster2>False</IncludeBooster2>
       <FlightTime>0</FlightTime>
-      <TimetoApogee>39.04945</TimetoApogee>
-      <MaxAltitude>31742.6</MaxAltitude>
-      <MaxVelocity>2402.041</MaxVelocity>
+      <TimetoApogee>39.23942</TimetoApogee>
+      <MaxAltitude>30845.14</MaxAltitude>
+      <MaxVelocity>2141.53</MaxVelocity>
       <OptimumWt>0</OptimumWt>
       <OptimumMaxAlt>0</OptimumMaxAlt>
     </Simulation>
